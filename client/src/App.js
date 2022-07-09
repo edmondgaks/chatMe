@@ -24,7 +24,7 @@ if(authToken) {
   },authToken)
 }
 const App = () => {
-  if (authToken) return <Auth />
+  if (!authToken) return <Auth />
   return (
     <div className='app__wrapper'>
         <Chat client={client} theme="team light">
