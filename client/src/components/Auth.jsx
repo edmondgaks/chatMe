@@ -11,9 +11,12 @@ const Auth = () => {
         setisSignup((prevIsSignup) => !prevIsSignup);
     }
   return (
-    <div className='auth__form-container'>
-        <div className='auth__form-container_fields'>
-            <div className='auth__form-container_fields-content'>
+    <div className='wrapper'>
+        <div className='header'>
+            <div className='top auth__form-container_fields-content'>
+                <div className='logo'>
+                    <h3>Medical App</h3>
+                </div>
                 <p>{isSignup ? 'Sign Up': 'Sign In'}</p>
                 <form onSubmit={() => {}}>
                     {isSignup && (
@@ -60,6 +63,9 @@ const Auth = () => {
                 </div>
             </div>
         </div>
+        {/* <div className='auth__form-container_image'>
+            <img src={signinImage} alt="sign in" />
+        </div> */}
     </div>
   )
 }
