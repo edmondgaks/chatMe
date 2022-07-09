@@ -16,6 +16,9 @@ const Auth = () => {
     const [isSignup, setisSignup] = useState(true);
     const handleChange = (e) => {
         setForm({...form, [e.target.name]: e.target.value  });
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(form);
     }
     const switchMode = () => {
@@ -29,7 +32,7 @@ const Auth = () => {
                     <h3>Medical App</h3>
                 </div>
                 <p>{isSignup ? 'Sign Up': 'Sign In'}</p>
-                <form onSubmit={() => {}}>
+                <form onSubmit={handleSubmit}>
                     {isSignup && (
                         <div className='auth__form-container_fields-content_input'>
                             <label htmlFor='fullName'>Full Name</label>
@@ -62,6 +65,9 @@ const Auth = () => {
                             <input name='confirmPassword' type="password" placeholder="Confirm password" onChange={handleChange} required/>
                         </div>
                     )}
+                    <div className='auth__form-container_fields-content_button'>
+                        <button>{isSignup ? "Sign Up" : "Sign In"}</button>
+                    </div>
                 </form>
                 <div className='auth__form-container_fields-account'>
                     <p>
