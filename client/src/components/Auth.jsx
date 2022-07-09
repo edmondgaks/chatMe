@@ -3,10 +3,21 @@ import Cookies from 'universal-cookie';
 import axios from 'axios';
 
 import signinImage from '../assets/signup.jpg';
-
+const initialState = {
+    fullName: '',
+    username: '',
+    password: '',
+    confirmPassword: '',
+    phoneNumber: '',
+    avatarURL: '',
+}
 const Auth = () => {
+    const [form,setForm] = useState(initialState);
     const [isSignup, setisSignup] = useState(true);
-    const handleChange = () => {}
+    const handleChange = (e) => {
+        setForm({...form, [e.target.name]: e.target.value  });
+        console.log(form);
+    }
     const switchMode = () => {
         setisSignup((prevIsSignup) => !prevIsSignup);
     }
