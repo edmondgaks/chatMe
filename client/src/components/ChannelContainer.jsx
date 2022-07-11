@@ -13,11 +13,23 @@ const ChannelContainer = ({isCreating,setisCreating,isEditing,setisEditing,creat
   }
   if(isEditing) {
     return (
-
+      <div className='channel__container'>
+        <EditChannel setisEditing={setisEditing} />
+      </div>
     )
   }
+  const EmptyState = () => (
+    <div className='channel-empty__container'>
+      <p className='channel-empty__first'>This is a beginning of your chat history.</p>
+      <p className='channel-empty__second'>Send messages, attachments,links,emojis and more!</p>
+    </div>
+  )
   return (
-    <div>ChannelContainer</div> 
+    <div className='channel__container'>
+      <Channel EmptyStateIndicator={EmptyState} Message={(messageProps, i) => <TeamMessage key={i} {...messageProps} />}>
+        <ChannelInner setisEditing={setisEditing} />
+      </Channel>
+    </div> 
   )
 }
 
