@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StreamChat } from 'stream-chat';
 import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
@@ -24,12 +24,15 @@ if(authToken) {
   },authToken)
 }
 const App = () => {
+  const [createType,setCreateType] = useState('');
+  const [isCreating,setisCreating] = useState(false);
+  const [isEditing,setisEditing] = useState(false);
   if (!authToken) return <Auth />
   return (
     <div className='app__wrapper'>
         <Chat client={client} theme="team light">
-            <ChannelListContainer />
-            <ChannelContainer />
+            <ChannelListContainer isCreating={isCreating} setisCreating={setisCreating} setCreateType={setCreateType} setisEditing={setisEditing} />
+            <ChannelContainer isCreating={setisCreating} setisCreating={setisCreating} isEditing={isEditing} setisEditing={setisEditing} createType={createType} />
         </Chat>
     </div>
   )
