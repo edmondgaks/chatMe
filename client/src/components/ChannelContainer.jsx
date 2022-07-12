@@ -4,17 +4,17 @@ import { ChannelInner,CreateChannel,EditChannel } from './'
 const ChannelContainer = ({isCreating,setIsCreating,isEditing,setIsEditing,createType}) => {
   const { channel } = useChatContext();
 
-  if(!isCreating) {
+  if(isCreating) {
     return (
       <div className='channel__container'>
-        <CreateChannel createType={createType} setisCreating={setIsCreating} />
+        <CreateChannel createType={createType} setIsCreating={setIsCreating} />
       </div>
     )
   }
   if(isEditing) {
     return (
       <div className='channel__container'>
-        <EditChannel setisEditing={setIsEditing} />
+        <EditChannel setIsEditing={setIsEditing} />
       </div>
     )
   }
