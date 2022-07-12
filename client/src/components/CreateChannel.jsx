@@ -19,8 +19,8 @@ const ChannelNameInput = ({ channelName= '',setChannelName}) => {
 }
 const CreateChannel = ({ createType,setIsCreating }) => {
   const [channelName, setChannelName] = useState('');
-  const [selectedUsers,setSelectedUsers] = useState([client.userID || '']);
   const {client,setActiveChannel} = useChatContext(); 
+  const [selectedUsers,setSelectedUsers] = useState([client.userID || '']);
   const createChannel = async (e) => {
     e.preventDefault();
 
