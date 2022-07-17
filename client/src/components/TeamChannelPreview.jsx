@@ -14,7 +14,7 @@ const TeamChannelPreview = ({setActiveChannel,setIsCreating,setIsEditing,setTogg
         return (
             <div className='channel-preview__item single'>
                 <Avatar image={members[0]?.user?.image} name={members[0]?.user?.fullName} size={24} />
-                <p>{members[0]?.user?.fullName}</p>
+                <p>{members[0]?.user?.fullName ?? members[0]?.user?.id}</p>
             </div>
         )
     }
@@ -25,8 +25,8 @@ const TeamChannelPreview = ({setActiveChannel,setIsCreating,setIsEditing,setTogg
         : 'channel-preview__wrapper'
     } onClick={() => {
         // console.log(channel)
-        // setIsCreating(false);
-        // setIsEditing(false);
+        setIsCreating(false);
+        setIsEditing(false);
         setActiveChannel(channel);
         if(setToggleContainer) {
             setToggleContainer((prevState) => !prevState)

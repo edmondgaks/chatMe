@@ -62,7 +62,7 @@ const ChannelListContent = ({isCreating,setIsCreating,setCreateType,setIsEditing
                     <TeamChannelList {...listProps} type="team" isCreating={isCreating} setIsCreating={setIsCreating} setCreateType={setCreateType} setIsEditing={setIsEditing} setToggleContainer={setToggleContainer} />
                 )}
                 Preview={(previewProps) => (
-                    <TeamChannelPreview {...previewProps} type="team" setToggleContainer={setToggleContainer} />
+                    <TeamChannelPreview {...previewProps} type="team" setIsCreating={setIsCreating} setIsEditing={setIsEditing} setToggleContainer={setToggleContainer} />
                 )}
             />
             <ChannelList 
@@ -72,7 +72,7 @@ const ChannelListContent = ({isCreating,setIsCreating,setCreateType,setIsEditing
                     <TeamChannelList {...listProps} type="messaging" isCreating={isCreating} setIsCreating={setIsCreating} setCreateType={setCreateType} setIsEditing={setIsEditing} setToggleContainer={setToggleContainer} />
                 )}
                 Preview={(previewProps) => (
-                    <TeamChannelPreview {...previewProps} setToggleContainer={setToggleContainer} type="messaging" />
+                    <TeamChannelPreview {...previewProps} setIsCreating={setIsCreating} setIsEditing={setIsEditing} setToggleContainer={setToggleContainer} type="messaging" />
                 )}
             />
         </div>
@@ -89,7 +89,7 @@ const ChannelListContainer = ({setCreateType,setIsCreating,setIsEditing}) => {
             <div className='channel-list__container-responsive' style={{ left: toggleContainer ? "0%" : "-89%", backgroundColor: "#005fff"}}>
                 <div className='channel-list__container-toggle' onClick={() => settoggleContainer((prevToggleContainer) => !prevToggleContainer)}>
                 </div>
-                <ChannelListContent setIsCreating={setIsCreating} setCreateType={setCreateType} setIsEditing={setIsEditing} setToggleContainer={setToggleContainer} />
+                <ChannelListContent setIsCreating={setIsCreating} setCreateType={setCreateType} setIsEditing={setIsEditing}  />
             </div>
         </>
     )
