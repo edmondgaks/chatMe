@@ -7,6 +7,10 @@ const bodyparser = require('body-parser');
 
 require('dotenv').config();
 
+const accountSID = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
+const twilioClient = require("twilio")(accountSID,authToken)
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
