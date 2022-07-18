@@ -14,3 +14,4 @@ export { default as ChannelInner } from './ChannelInner';
 export { default as UserList } from './UserList';
 
 
+export { default as ResultsDropdown } from './ResultsDropdown';
