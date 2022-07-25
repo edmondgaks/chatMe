@@ -23,7 +23,7 @@ const Sidebar = ({ logout }) => (
 );
 const CompanyHeader = () => (
     <div className='channel-list__header'>
-        <p className='channel-list__header__text'>Medical Pager</p>
+        <p className='channel-list__header__text'>G-CHAT</p>
     </div>
 )
 

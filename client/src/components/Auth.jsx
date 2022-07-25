@@ -22,7 +22,7 @@ const Auth = () => {
         e.preventDefault();
         const { username, password, phoneNumber, avatarURL } = form;
 
-        const URL = 'https://medicalchat-app.herokuapp.com/auth';
+        const URL = 'http://localhost:4000/auth';
 
         const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
             username, password, fullName: form.fullName, phoneNumber, avatarURL,
@@ -46,7 +46,7 @@ const Auth = () => {
         <div className='header'>
             <div className='top auth__form-container_fields-content'>
                 <div className='logo'>
-                    <h3>Medical App</h3>
+                    <h3>G-CHAT BY EDMOND</h3>
                 </div>
                 <p>{isSignup ? 'Sign Up': 'Sign In'}</p>
                 <form onSubmit={handleSubmit}>
