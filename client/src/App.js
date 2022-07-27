@@ -4,7 +4,7 @@ import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import './App.css';
 import 'stream-chat-react/dist/css/index.css';
-
+import { useStateContext } from './context/contextProvider';
 import { ChannelContainer,ChannelListContainer,Auth } from './components';
 
 const cookies = new Cookies();
@@ -25,6 +25,7 @@ if(authToken) {
   },authToken)
 }
 const App = () => {
+  const { activeMenu,setActiveMenu } = useStateContext();
   const [createType,setCreateType] = useState('');
   const [isCreating,setIsCreating] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
